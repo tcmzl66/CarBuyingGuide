@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>人生第一辆车 · 购车决策助手</title>
+  <meta name="description" content="跟着 UP 主 所长Wy 的购车框架，从需求、预算、选车标准到提车验车，一步步理清你的人生第一辆车。" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app" class="app">
+    <!-- 顶部进度条 -->
+    <header class="topbar">
+      <div class="topbar-inner">
+        <button id="btnHome" class="brand" type="button" aria-label="回到首页">
+          <span class="brand-mark">🚗</span>
+          <span class="brand-text">购车决策助手</span>
+        </button>
+        <button id="btnReset" class="ghost-btn" type="button">重置</button>
+      </div>
+      <div class="progress" aria-hidden="true">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+    </header>
+
+    <!-- 主内容区：由 app.js 渲染 -->
+    <main id="view" class="view" tabindex="-1"></main>
+
+    <!-- 底部步骤导航 -->
+    <nav id="stepNav" class="stepnav" aria-label="步骤导航"></nav>
+
+    <footer class="foot">
+      <p>内容框架整理自 B 站 UP 主 <b>所长Wy</b>《如何买人生第一辆车？》(BV15cH56sE1j) 及其《购车指南参考图表》。本工具仅作决策参考，具体以车型实测与当地政策为准。</p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="./data.js"></script>
+  <script src="./storage.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
