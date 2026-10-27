@@ -1,13 +1,17 @@
-# OS / editor
-.DS_Store
-Thumbs.db
-desktop.ini
-.idea/
-.vscode/
-*.swp
-
-# Node (if later tooling is added)
 node_modules/
-
-# Logs
+dist/
+__pycache__/
 *.log
+first-car-backup*.json
+first-car-original*.json
+.DS_Store
+
+# 参考资料库（仅供本地开发参考，不提交到任何代码平台）
+doc/
+
+# Qoder 本地知识/仓库索引缓存，不提交
+.qoder/
+
+# 本地验证截图与临时页面（开发期产物，不提交）
+/*.png
+/_tmp_*.html

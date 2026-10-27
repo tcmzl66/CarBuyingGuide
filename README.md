@@ -4,6 +4,12 @@
 
 > 内容框架整理自 B 站 UP 主 **所长Wy**《如何买人生第一辆车？》([BV15cH56sE1j](https://www.bilibili.com/video/BV15cH56sE1j)) 及其《购车指南参考图表》。本工具只做决策梳理，**不推荐具体车型、不替代实车体验**。
 
+## 在线体验
+
+GitHub Pages 静态托管（无需后端）：<https://tcmzl66.github.io/CarBuyingGuide/>
+
+> 首次部署后可能需等待 1–2 分钟生效；所有填写内容仅保存在你自己的浏览器本地。
+
 ## 功能流程
 
 1. **要不要买** —— 灵魂三问 + 持有成本估算（落地价 / 年用车成本 / 年均持有）
@@ -26,23 +32,30 @@
 | 文件 | 作用 |
 | --- | --- |
 | `index.html` | 入口骨架（保持 < 1 MB） |
-| `styles.css` | 样式（B 站蓝粉主题、移动端优先） |
+| `styles.css` | 样式（深海蓝 + 琥珀金主题、移动端优先） |
 | `data.js` | 全部内容与决策框架数据 |
-| `storage.js` | localStorage 持久化层 |
-| `app.js` | 步骤向导渲染与交互逻辑 |
+| `kb.js` | 购车流程百科知识库（步骤 → 分组 → 事项） |
+| `storage.js` | localStorage 持久化层与预算/贷款计算 |
+| `app.js` | 页面渲染与交互逻辑 |
+| `scripts/` | 打包与预览脚本（Python 3 标准库） |
+| `tests/` | 自动化测试（Node.js 内置 test runner） |
 
 所有资源引用均为**相对路径**，符合 Toy 在 `/toy/<slug>/` 子路径下运行的要求。
 
-## 本地运行
-
-任意静态服务器均可，例如：
+## 本地运行与校验
 
 ```bash
-python -m http.server 8080
-# 浏览器打开 http://localhost:8080
+npm start          # 本地预览：http://127.0.0.1:8080/index.html
+npm test           # 自动化测试
+npm run build      # 打包 Toy 产物到 dist/first-car-toy.zip
+npm run format:check
 ```
 
+以上均无需安装运行时依赖（仅 devDependencies：prettier、linkedom）。
+
 ## 发布到 B 站 Toy（暂未执行）
+
+> 当前仅托管在 GitHub Pages 供预览，**不提交 Toy 审核**。
 
 1. 用已开通 Toy 平台权限的账号打开发布页：<https://www.bilibili.com/toy/publish>
 2. 将本目录打包（总大小需 < 50 MB，当前约 75 KB）

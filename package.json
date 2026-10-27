@@ -1,0 +1,17 @@
+{
+  "name": "first-car-guide",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local-first car-buying decision guide, with source attribution to 所长Wy.",
+  "scripts": {
+    "test": "node --test tests/guide.test.cjs",
+    "format": "prettier --write app.js data.js kb.js storage.js styles.css index.html package.json tests/*.cjs",
+    "format:check": "prettier --check app.js data.js kb.js storage.js styles.css index.html package.json tests/*.cjs",
+    "build": "python scripts/package_toy.py",
+    "start": "python scripts/preview.py"
+  },
+  "devDependencies": {
+    "linkedom": "0.18.12",
+    "prettier": "3.6.2"
+  }
+}
